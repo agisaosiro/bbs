@@ -1,0 +1,33 @@
+<h1>確認画面</h1>
+
+<% if @para == 1#更新 %>
+  <% if @f_upd %>
+    <% if @conf %>
+      <p align='center'>更新しました。</p>
+        <%= link_to '戻る', :controller => 'user', :action => 'show' %><br>
+
+    <% else %>
+      <p align='center'>更新しますか？</p>
+      <table><tr><td>
+        <%= button_to '取消', :controller => 'user', :action => 'show' %>
+        </td>
+        <td><%= form_tag("/board/update/"+@id.to_s, :method => :get) do %>
+          <input type="hidden" name="content_edit" value="<% @content %>">
+        <%= submit_tag '更新', :id => @id, :content_edit => @content %>
+      </td></tr></table>
+      <% end %>
+      <%= link_to '戻る', :back %><br>
+    <% end %>
+
+  <% else %>
+    <p align='center'>コメントを入力してください。</p>
+    <%= link_to '戻る', :back %><br>
+<%end%>
+
+<% elsif @para == 2#削除 %>
+  <p align='center'></p>
+<% else %>
+  <p align='center'></p>
+<% end %>
+
+<%= link_to 'TOPに戻る', :controller => 'user' %>

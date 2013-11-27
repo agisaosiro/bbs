@@ -1,0 +1,9 @@
+<% if @f_upd %>
+  <p align='center'>更新しました。</p>
+  <%= link_to '戻る', :controller => 'user', :action => 'show' %><br>
+<% else %>
+  <p align='center'>コメントを入力してください。</p>
+  <%= link_to '戻る', :back %><br>
+<%end%>
+
+<%= link_to 'TOPに戻る', :controller => 'user' %>

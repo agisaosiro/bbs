@@ -1,0 +1,7 @@
+<% if @f_cre %>
+  <p align='center'>登録しました。</p>
+<% else %>
+  <p align='center'>名前を入力してください。</p>
+<% end %>
+<%= link_to '戻る', :controller=>'user', :action => 'register' %><br>
+<%= link_to 'TOPに戻る', :controller=>'user' %>

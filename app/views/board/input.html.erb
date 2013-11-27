@@ -1,0 +1,17 @@
+<h1>入力画面</h1>
+<p>コメントを入力してください。a</p>
+
+<table>
+  <%= form_tag("/board/transmit", :method => :get) do %>
+    <tr>
+      <td><%= label :content, "コメント：" %></td>
+      <td><%= text_field_tag :content %></td>
+      <td><%= label :user_id, "名前" %></td>
+      <td><%= select_tag :user_id, options_from_collection_for_select(User.all, "id", "name", params[:name].to_i) %></td>
+      <td><%= submit_tag "送信", :confirm => "送信しますか？" %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to 'TOPに戻る', :controller=>'user' %>

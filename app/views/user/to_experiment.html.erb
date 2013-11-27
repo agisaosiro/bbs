@@ -1,0 +1,40 @@
+<h1>実験用ページ</h1>
+
+<table border=1>
+  <!-- <tr>
+    <td> 1 </td> <td> 2 </td> <td> 3 </td> <td> 4 </td>
+  </tr> -->
+  <tr align='center'><td>実験内容</td><td>実験結果</td><td>考察</td><td>ソース(オンマウスで表示されるといいな)</td></tr>
+
+  <tr>
+    <td>メソッドの引数を指定する場所に(変数=true)と書いたが、<br>falseを受け取った場合どうなるのか</td>
+    <td><p>帰ってきた値：<%= @method_true %><p></td>
+    <td>引数がなかった場合には=で指定された値が代入されるようだ</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>配列に+=で値をいれてみるテスト</td>
+    <td>
+      <% @array_plusequal.each do |array| %>
+        <%= array %>,
+        <%if array % 5 == 0%><br>
+        <% end %>
+      <% end %>
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>ビット演算とか</td>
+    <td>
+      <p>bit=<%= @bit.bit %></p><br>
+      <%= link_to 'トグル', 'bit_toggle' %><br>
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+      <% p "html => @bit="+@bit.bit.to_s %>
+
+</table>

@@ -1,0 +1,11 @@
+<% if @f_tra == 1 %>
+  <p align="center">送信しました。</p>
+  <%= link_to 'コメント一覧', :controller => 'user', :action => 'show' %><br>
+<% elsif @f_tra == -1 %>
+  <p align='center'>コメントを入力してください。</p>
+<% else %>
+  <p align="center">先に登録してください。</p>
+<% end %>
+
+<%= link_to '戻る', :controller => 'board', :action => 'input' %><br>
+<%= link_to 'TOPに戻る', :controller => 'user' %>

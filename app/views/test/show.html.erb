@@ -1,0 +1,30 @@
+<h1>コメント一覧</h1>
+<!--
+<p>
+deck_max_numは「<%= @deck_max_num %>」です。
+</p>
+-->
+<table border=1 cellpadding=5>
+  <tr align="center"><td>名前</td><td>コメント</td></tr>
+<!--<%= @board = Board.all %>-->
+
+  <% @board.each do |board| %>
+<!--
+  <%= @content = board.content %>
+  <%= @id = board.id %>
+  <%= @user_id = board.user_id.to_i %>
+  <%= @test = Test.find(@user_id) %>
+-->
+    <tr>
+      <!--<td><%= board.user_id %></td>-->
+      <td><%= @test.name %></td>
+      <td><%= @content %></td>
+      <td><%= link_to '編集', :controller => 'board', :action => 'edit', :id => @id %></td>
+      <td><%= link_to "削除", :controller => 'board', :action => 'delete', :comfirm => "削除しますか？", :id => @id %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to '戻る', :controller=>'test' %>
+

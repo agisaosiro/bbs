@@ -1,0 +1,20 @@
+
+<!--
+  <%= board = Board.find(@id)%>
+-->
+<table>
+  <%= form_tag("/board/update/"+@id.to_s, :method => :get) do %>
+    <tr>
+      <td align='right'>編集元：</td>
+      <td><%= board.content %></td>
+    </tr>
+    <tr>
+      <td><%= label :content_edit, "コメント：" %></td>
+      <td><%= text_field_tag :content_edit %></td>
+      <td><%= submit_tag "更新", :confirm => "よろしいですか？", :para => false %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "戻る", :controller=>'user', :action => 'show' %><br>
+<%= link_to "TOPに戻る", :controller=>'user' %>

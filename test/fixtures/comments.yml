@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 9.99
+  name: MyString
+  create_at: 2013-09-19
+  update_at: 2013-09-19
+
+two:
+  id: 9.99
+  name: MyString
+  create_at: 2013-09-19
+  update_at: 2013-09-19
